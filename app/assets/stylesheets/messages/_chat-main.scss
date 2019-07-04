@@ -106,13 +106,26 @@
         cursor: pointer;
         float: right;
       }
+    background-color: #ddd;
   }
-    .New_message {
-      display: flex;
+      &__image {
+        font-size: 1.3rem;
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        cursor: pointer;
+        &__file {
+          display: none;
+        }
+      }
     }
-  
-  }
-
-  .new_message{
-    display: flex;
+    .Submit-btn {
+      width: 100px;
+      height: 50px;
+      padding: 0, 30px;
+      margin-left: 15px;
+      background-color: #38aef0;
+      color: white;
+      cursor: pointer;
+    }
   }

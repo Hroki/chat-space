@@ -51,8 +51,6 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
-<<<<<<< Updated upstream
-=======
 gem "haml-rails"
 gem "font-awesome-rails"
 gem "devise"
@@ -68,4 +66,5 @@ group :development, :test do
   gem 'factory_bot_rails'
   gem 'faker'
 end
->>>>>>> Stashed changes
+
+
