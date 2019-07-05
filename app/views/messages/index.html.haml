@@ -24,40 +24,31 @@
       .Main-header
         .Main-header__left-box
           %h2.Main-header__left-box__current-group{:deta_group_id => ""}
-          
-          %ul.Main-header__left-box__member-list
-            
+            group
+          %ul.Main-header__left-box__member-list 
+            Menber:
             %li.Main-header__left-box__member-list__member
-              
-              
-              
+              name
+                            
         %a{:herf => ""}
-          .Main-header__edit-btn
+          .Main-header__edit-btn Edit
             
       .Messages
+        =render @messages
         .Message{:data_message_id => ""}
-        .Message__upper-info
-          .Message__upper-info__talker
-            
-          .Message__upper-info__date
-            
-        .Message__text
+          .Message__upper-info
+            .Message__upper-info__talker
+              
+            .Message__upper-info__date
+              
+          .Message__text
           
       .Form
-      = form_for [@group, @message] do |f|
-        = f.text_field :content, class: 'form__message', placeholder: 'type a message'
-        .form__mask
-          = f.label :image, class: 'form__mask__image' do
-            = fa_icon 'picture-o', class: 'icon'
-            = f.file_field :image, class: 'hidden'
-        = f.submit 'Send', class: 'form__submit'
-        %form.New_message{:method => "post", :accept_charset => "UTF-8", :action => "", :enctype => "multipart/form-data", :id => "new_message"}
-          %input{:value => "", :type => "hidden", :name => "utf-8"}
-          %input{:value => "", :name => "authenticity_token", :type => "hidden"}
-          .Input-box
-            %input.Input-box__text{:id => "message_content", :name => "message[content]", :type => "text", :placeholder => "type a message"}
-            %label.Input-box__image{:for => "message_image"}
-              .Fa-image
-                = fa_icon "photo" 
-              %input.Input-box__image__file{:id => "message_image", :name => "message[image]", :type => "file"}
-          %input.Submit-btn{:data_disable_with => "Send", :value => "Send", :name => "commit", :type => "submit"}
+        = form_for [@group, @message] do |f|
+          .Form__mask
+            = f.text_field :content, class: 'Form__mask__message', placeholder: 'type a message'
+            = f.label :image, class: 'Form__mask__image' do
+              = fa_icon 'picture-o', class: 'icon'
+              = f.file_field :image, class: 'hidden'
+          = f.submit 'Send', class: 'Form__submit'
+
