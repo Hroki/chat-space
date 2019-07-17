@@ -2,6 +2,7 @@ class UsersController < ApplicationController
 
   def index
     # binding.pry
+    # @users = group.users.where.not(id: group.users.id)
     @users = User.where('name LIKE(?) and id != ?', "#{params[:keyword]}%", current_user)
     
     respond_to do |format|

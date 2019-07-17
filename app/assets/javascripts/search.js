@@ -2,6 +2,7 @@ $(document).on('turbolinks:load', function() { });$(function() {
   
   var user_list = $("#user-search-result");
   var member_list = $("#member_search_result");
+  
 
   function appendUsers(user) {
     var html = `<div class='chat-group-user clearfix js-chat-member'>
@@ -65,6 +66,9 @@ $(document).on('turbolinks:load', function() { });$(function() {
         $(this).parent().remove();
   
         var html = appnedMenbaers(name, user_id);
+        console.log(name);
+        console.log(user_id);
+        console.log(html);
         member_list.append(html)
     });
     $(document).on("click", '.user_search_remove', function () {

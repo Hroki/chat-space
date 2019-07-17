@@ -19,30 +19,28 @@
               .group__name
                 = group.name
               .group__message
-                メッセージはまだありません。
+                = group.show_last_message
     .Chat-main
       .Main-header
         .Main-header__left-box
           %h2.Main-header__left-box__current-group{:deta_group_id => ""}
-            group
+          = @group.name
           %ul.Main-header__left-box__member-list 
-            Menber:
-            %li.Main-header__left-box__member-list__member
-              name
-                            
+            Members : 
+            %ul.members
+              - @group.users.each do |user|
+                %li.user.name 
+                  = user.name
+                  
+        
+
         %a{:herf => ""}
         =link_to edit_group_path(@group) do
           .Main-header__edit-btn Edit
             
       .Messages
         =render @messages
-        .Message{:data_message_id => ""}
-          .Message__upper-info
-            .Message__upper-info__talker
-              
-            .Message__upper-info__date
-              
-          .Message__text
+        
           
       .Form
         = form_for [@group, @message] do |f|

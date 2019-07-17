@@ -39,10 +39,12 @@
   .Group {
     margin-bottom: 40px;
     &__group-name {
+      padding: 5px;
       font-size: 15px;
       margin-bottom: 5px;
     }
     &__latest-message {
+      padding: 40px;
       font-size: 11px;
     }
   }

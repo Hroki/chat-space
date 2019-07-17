@@ -38,12 +38,19 @@
   overflow: scroll;
   .Group {
     margin-bottom: 40px;
+
+    a {
+      padding: 40px;
+    }
+
     &__group-name {
+      margin: 5px;
       font-size: 15px;
       margin-bottom: 5px;
     }
     &__latest-message {
       font-size: 11px;
+      padding: 40px;
     }
   }
 }

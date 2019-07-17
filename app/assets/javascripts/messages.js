@@ -1,11 +1,10 @@
 $(function(){
-
   function buildHTML(message){
     
     var img = message.image.url == null ? "" : `<img class: 'lower-message__image' src=${message.image.url}></img>`
     
     var html = 
-    `<div class= "message">
+    `<div class= "message" data-message-id="${message.id}" >
       <div class= "upper-message">
         <div class= "upper-message__user-name">
           ${message.user_name}
@@ -44,7 +43,7 @@ $(function(){
       html = buildHTML(data);
       $('.Messages').append(html);
       $('.textbox').val('');
-      $('form')[0].reset();
+      $('.new_message')[0].reset();
       $(".Messages").animate({scrollTop:$('.Messages')[0].scrollHeight}, 'fast');
     })
     .fail(function(){
@@ -64,6 +63,7 @@ $(function(){
         data: {id: last_message_id} //飛ばすデータは先ほど取得したlast_message_id。またparamsとして渡すためlast_idとする。
       })
       .done(function (messages) { //通信成功したら、controllerから受け取ったデータ（messages)を引数にとって以下のことを行う
+        console.log(messages);
         var insertHTML = '';//追加するHTMLの入れ物を作る
         messages.forEach(function (message) {//配列messagesの中身一つ一つを取り出し、HTMLに変換したものを入れ物に足し合わせる
           insertHTML = buildHTML(message); //メッセージが入ったHTMLを取得
