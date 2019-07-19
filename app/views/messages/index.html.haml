@@ -26,10 +26,10 @@
           %h2.Main-header__left-box__current-group{:deta_group_id => ""}
           = @group.name
           %ul.Main-header__left-box__member-list 
-            Members : 
+            Member : 
             %ul.members
               - @group.users.each do |user|
-                %li.user.name 
+                %li.user_name 
                   = user.name
                   
         

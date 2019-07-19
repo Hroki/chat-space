@@ -34,13 +34,14 @@
 .Groups {
   height: calc(100vh - 100px);
   background: #2f3e51;
-  padding: 20px, 20px, 0;
+  padding: 20px 20px 0;
   overflow: scroll;
   .Group {
     margin-bottom: 40px;
 
     a {
       padding: 40px;
+      text-decoration: none;
     }
 
     &__group-name {
